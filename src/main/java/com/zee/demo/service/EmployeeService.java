@@ -33,13 +33,18 @@ public class EmployeeService {
 		return repository.findById(employeeId).get();
 	}
 
+	public Employee getEmployeeByFirstName(String firstName) {
+		// please write necessary code here and in the repository
+		return null;
+	}
+
 	public Employee addEmployee(Employee employee) {
 		System.out.println("addEmployee");
 		return repository.save(employee);
 	}
 
 	public Employee updateEmployee(Employee employee) {
-		// write logic here 
+		// write logic here
 		return repository.save(employee);
 	}
 

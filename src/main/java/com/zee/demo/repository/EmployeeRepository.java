@@ -7,7 +7,9 @@ import com.zee.demo.model.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-	
-	// no code as of now 
+
+	// no code as of now
+
+	// write code to get employee by firstName
 
 }
