@@ -1,5 +1,9 @@
 package com.zee.demo.repository;
 
-public interface EmployeeRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.zee.demo.model.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
 }
