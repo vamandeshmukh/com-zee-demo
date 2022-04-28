@@ -8,7 +8,7 @@ import com.zee.demo.model.Employee;
 public class EmployeeService {
 
 	// select * from employees;
-	
+
 	public List<Employee> getAllEmployees() {
 
 		return new ArrayList<Employee>();
