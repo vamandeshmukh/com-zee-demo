@@ -1,10 +1,12 @@
 package com.zee.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Entity
+@Entity // table in DB
 public class Employee {
 
+	@Id // primary key
 	private int employeeId;
 	private String firstName;
 	private double salary;
