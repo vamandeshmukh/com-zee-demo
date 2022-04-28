@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,14 +39,12 @@ public class EmployeeController {
 		System.out.println("getEmpById");
 		return service.getEmployeeById(employeeId);
 	}
+
+//	http://localhost:8888/add-emp 
+	@PostMapping("/add-emp")
+	public Employee addEmp(@RequestBody Employee employee) {
+		System.out.println(employee.toString());
+		return service.addEmployee(employee);
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
