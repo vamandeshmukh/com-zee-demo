@@ -1,17 +1,33 @@
 package com.zee.demo.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.zee.demo.model.Employee;
+import com.zee.demo.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
 
-//	http://localhost:8888/hello
+	@Autowired
+	EmployeeService service;
 
+//	http://localhost:8888/hello
 	@RequestMapping("/hello")
 	public String hello() {
 		System.out.println("hello");
 		return "Hello world!";
+	}
+
+//	http://localhost:8888/get-all-emps
+	@GetMapping("/get-all-emps")
+	public List<Employee> getAllEmps() {
+		System.out.println("getAllEmps");
+		return service.getAllEmployees();
 	}
 
 }
