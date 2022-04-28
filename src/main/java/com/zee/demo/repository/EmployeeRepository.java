@@ -11,5 +11,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	// no code as of now
 
 	// write code to get employee by firstName
+	// reference -
+	// https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 
 }
