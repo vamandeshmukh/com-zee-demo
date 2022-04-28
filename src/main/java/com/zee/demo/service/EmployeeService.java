@@ -28,10 +28,14 @@ public class EmployeeService {
 		return repository.findAll();
 	}
 
+	public Employee getEmployeeById(int employeeId) {
+		System.out.println("getEmployeeById" + employeeId);
+		return repository.findById(employeeId).get();
+	}
+
 	public Employee addEmployee(Employee employee) {
 		System.out.println("addEmployee");
 		return repository.save(employee);
-
 	}
 
 }
