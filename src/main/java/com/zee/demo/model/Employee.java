@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity // table in DB
+
 public class Employee {
 
 	@Id // primary key
