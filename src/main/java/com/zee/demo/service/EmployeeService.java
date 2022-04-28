@@ -38,4 +38,15 @@ public class EmployeeService {
 		return repository.save(employee);
 	}
 
+	public Employee updateEmployee(Employee employee) {
+		// write logic here 
+		return repository.save(employee);
+	}
+
+	public Employee deleteEmployee(int employeeId) {
+		Employee emp = repository.findById(employeeId).get();
+		repository.delete(emp);
+		return emp;
+	}
+
 }
