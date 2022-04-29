@@ -2,6 +2,8 @@ package com.zee.demo.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,27 +19,29 @@ import com.zee.demo.service.EmployeeService;
 @RestController
 public class EmployeeController {
 
+	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+
 	@Autowired
 	EmployeeService service;
 
 //	http://localhost:8888/get-all-emps
 	@GetMapping("/get-all-emps")
 	public List<Employee> getAllEmps() {
-		System.out.println("getAllEmps");
+		LOG.info("getAllEmps");
 		return service.getAllEmployees();
 	}
 
 //	http://localhost:8888/get-emp-by-id/{eid}
 	@GetMapping("/get-emp-by-id/{eid}")
 	public Employee getEmpById(@PathVariable(name = "eid") int employeeId) {
-		System.out.println("getEmpById");
+		LOG.info(Integer.toString(employeeId));
 		return service.getEmployeeById(employeeId);
 	}
 
 //	http://localhost:8888/get-emp-by-first-name/{firstName}
 	@GetMapping("/get-emp-by-first-name/{firstName}")
 	public Employee getEmpByFirstName(@PathVariable(name = "firstName") String firstName) {
-		System.out.println(firstName);
+		LOG.info(firstName);
 		return service.getEmployeeByFirstName(firstName);
 	}
 
@@ -51,14 +55,14 @@ public class EmployeeController {
 //	http://localhost:8888/update-emp
 	@PutMapping("/update-emp")
 	public Employee updateEmp(@RequestBody Employee employee) {
-		System.out.println(employee.toString());
+		LOG.info(employee.toString());
 		return service.updateEmployee(employee);
 	}
 
 //	http://localhost:8888//delete-emp/{eid}
 	@DeleteMapping("/delete-emp/{eid}")
 	public Employee deleteEmp(@PathVariable(name = "eid") int employeeId) {
-		System.out.println(employeeId);
+		LOG.info(Integer.toString(employeeId));
 		return service.deleteEmployee(employeeId);
 	}
 

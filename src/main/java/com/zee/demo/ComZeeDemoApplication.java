@@ -1,18 +1,19 @@
 package com.zee.demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ComZeeDemoApplication {
 
+	private final static Logger LOG = LoggerFactory.getLogger(ComZeeDemoApplication.class);
+
 	public static void main(String[] args) {
-
-		System.out.println("Start");
-
+		LOG.info("Start");
 		SpringApplication.run(ComZeeDemoApplication.class, args);
-
-		System.out.println("End");
+		LOG.info("End");
 
 	}
 
