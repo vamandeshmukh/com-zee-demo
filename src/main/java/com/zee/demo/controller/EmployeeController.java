@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +34,13 @@ public class EmployeeController {
 		LOG.info("getAllEmps");
 		return service.getAllEmployees();
 	}
+
+////	http://localhost:8888/emp/get-all-emps
+//	@GetMapping("/get-all-emps")
+//	public ResponseEntity<List<Employee>> getAllEmps() {
+//		LOG.info("getAllEmps");
+//		return new ResponseEntity<List<Employee>>(service.getAllEmployees(), HttpStatus.OK);
+//	}
 
 //	http://localhost:8888/emp/get-emp-by-id/{eid}
 	@GetMapping("/get-emp-by-id/{eid}")
