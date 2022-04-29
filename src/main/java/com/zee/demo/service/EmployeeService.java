@@ -1,6 +1,8 @@
 package com.zee.demo.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +35,16 @@ public class EmployeeService {
 	}
 
 	public Employee getEmployeeById(int employeeId) {
-		LOG.info("getEmployeeById" + employeeId);
-		return repository.findById(employeeId).get();
+		LOG.info("getEmployeeById " + employeeId);
+		Optional<Employee> empOpt = repository.findById(employeeId);
+		Employee empObj;
+		try {
+			empObj = empOpt.get();
+			return empObj;
+		} catch (NoSuchElementException e) {
+			LOG.warn(e.getMessage());
+			return null;
+		}
 	}
 
 	public Employee getEmployeeByFirstName(String firstName) {
@@ -51,7 +61,6 @@ public class EmployeeService {
 
 	public Employee updateEmployee(Employee employee) {
 		LOG.info("updateEmployee " + employee.toString());
-
 		// write logic here
 		return repository.save(employee);
 	}
