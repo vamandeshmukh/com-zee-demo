@@ -6,13 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ComZeeDemoApplication {
+public class App {
 
-	private final static Logger LOG = LoggerFactory.getLogger(ComZeeDemoApplication.class);
+	private final static Logger LOG = LoggerFactory.getLogger(App.class);
 
 	public static void main(String[] args) {
 		LOG.info("Start");
-		SpringApplication.run(ComZeeDemoApplication.class, args);
+		SpringApplication.run(App.class, args);
 		LOG.info("End");
 
 	}
