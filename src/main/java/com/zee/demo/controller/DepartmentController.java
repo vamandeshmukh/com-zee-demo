@@ -8,13 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zee.demo.model.Department;
 import com.zee.demo.service.DepartmentService;
-
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/dep")
@@ -44,3 +43,26 @@ public class DepartmentController {
 	}
 
 }
+
+
+
+
+//add dep 
+//{
+//  "departmentName": "string",
+//  "city": "string"
+//}
+//add emp with dep 
+//{
+//  "firstName": "string",
+//  "salary": 0,
+//  "department": {
+//    "departmentId": xxx
+//  }
+//}
+//add emp without dep 
+//{
+//  "firstName": "string",
+//  "salary": 0
+//}
+//
