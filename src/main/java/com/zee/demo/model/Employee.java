@@ -26,7 +26,7 @@ public class Employee {
 
 	@ManyToOne
 	@JoinColumn(name = "departmentId")
-	private Deparment department;
+	private Department department;
 
 	// constructors, getters, setters, toString etc
 
@@ -47,14 +47,14 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public Employee(String firstName, double salary, Deparment department) {
+	public Employee(String firstName, double salary, Department department) {
 		super();
 		this.firstName = firstName;
 		this.salary = salary;
 		this.department = department;
 	}
 
-	public Employee(int employeeId, String firstName, double salary, Deparment department) {
+	public Employee(int employeeId, String firstName, double salary, Department department) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
@@ -86,11 +86,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public Deparment getDepartment() {
+	public Department getDepartment() {
 		return department;
 	}
 
-	public void setDepartment(Deparment department) {
+	public void setDepartment(Department department) {
 		this.department = department;
 	}
 
@@ -116,7 +116,7 @@ public class Employee {
 //	private int employeeId; // generate automatically 
 //	private String firstName;
 //	private double salary;
-////	private Deparment department;
+////	private Department department;
 //
 //	// constructors, getters, setters, toString etc
 //
